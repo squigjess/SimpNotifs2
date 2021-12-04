@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: uvicorn app.main:api --host 0.0.0.0 --ssl-keyfile ./testkey.pem --ssl-certfile ./testcert.pem 
+    volumes:
+      - .:/app
+    ports:
+      - 8008:8000

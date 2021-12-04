@@ -1,4 +1,4 @@
-# Generates an OAuth access token.
+# Generates an OAuth access token
 source ../.env
 curl -d client_id=$TWITCH_CLIENT_ID \
      -d client_secret=$TWITCH_CLIENT_SECRET \

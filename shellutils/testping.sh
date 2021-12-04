@@ -1,4 +1,4 @@
-# Subscribes to an event
+# Subscribes to a stream.online event
 source ../.env
 curl -H "Authorization: Bearer $TWITCH_OAUTH_ACCESS_TOKEN" \
      -H "Client-ID: $TWITCH_CLIENT_ID" \
@@ -12,4 +12,4 @@ curl -H "Authorization: Bearer $TWITCH_OAUTH_ACCESS_TOKEN" \
                \"callback\": \"https://example.com/webhooks/callback\", \
                \"secret\": \"abcdefghij0123456789\" \
           }  \
-     }" "https://api.twitch.tv/helix/eventsub/subscriptions" -s | jq '.'
+     }" "https://localhost:8008/hello" -s | jq '.'
