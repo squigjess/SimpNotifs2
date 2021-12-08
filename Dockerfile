@@ -1,16 +1,11 @@
 # Use the official Nginx + Python image as the base for our container.
 FROM nginx/unit:1.26.1-python3.9
 
-# Copy SSL certificates to the container.
-# COPY ./*.pem  /docker-entrypoint.d/
-
-###############################################################################
-# Copy config files to the container.
+# Copy config and certificate files to the container.
 COPY ./nginx/docker-entrypoint.d/* /docker-entrypoint.d/ 
 
 # Copy the web app to the container.
 COPY ./webapp /www
-###############################################################################
 
 # Copy the dependencies list to the container.
 COPY requirements.txt /config/requirements.txt
@@ -38,3 +33,5 @@ RUN apt update && apt install -y python3-pip                                  \
 #   )
 
 # https://unit.nginx.org/howto/certbot/
+
+# docker build --tag=unit-webapp . --no-cache

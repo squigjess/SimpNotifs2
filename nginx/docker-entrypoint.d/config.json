@@ -2,9 +2,6 @@
     "listeners":{
         "*:8000":{
             "pass":"applications/webapp",
-            "tls": {
-                "certificate": "bundlesimpnotifs"
-            }
         }
     },
 
@@ -12,7 +9,7 @@
         "webapp":{
             "type":"python 3",
             "path":"/www/",
-            "module": "snotifs",
+            "module": "simpnotifs",
             "callable": "app"
         }
     }
