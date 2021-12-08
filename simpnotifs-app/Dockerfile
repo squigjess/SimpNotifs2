@@ -1,16 +1,7 @@
-# pull the official docker image
-FROM python:3.9.4-slim
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
-# set work directory
-WORKDIR /app
+COPY ./app/simpnotifs/requirements.txt /app/requirements.txt
 
-# set env variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+RUN pip install -r /app/requirements.txt
 
-# install dependencies
-COPY requirements.txt .
-RUN pip install -r requirements.txt
-
-# copy project
-COPY . .
+COPY ./app/simpnotifs /app

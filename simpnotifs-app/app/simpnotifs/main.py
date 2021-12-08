@@ -13,10 +13,6 @@ api = FastAPI()
 
 @api.post("/hello")
 async def _hello(request: Request):
-    req = await request.body()
-    print(req.decode("utf-8"))
-    req = await request.json()
-    print(json.dumps(req, indent=4))
     return {"greeting": "hello", "subject": "subject"}
 
 
@@ -29,11 +25,3 @@ async def _hello(request: Request):
 # # @api.get("/callback")
 # # async def typehint(envar: str):
 # #     return {"envar": envar, "val": os.environ[envar]}
-
-if __name__ == '__main__':
-    uvicorn.run("main:api",
-                host="0.0.0.0",
-                port=8000,
-                reload=True,
-                ssl_keyfile=os.environ["SSL_KEY"],
-                ssl_certfile=os.environ["SSL_CERT"])
