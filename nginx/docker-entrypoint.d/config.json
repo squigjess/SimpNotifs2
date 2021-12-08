@@ -1,7 +1,10 @@
 {
     "listeners":{
         "*:8000":{
-            "pass":"applications/webapp"
+            "pass":"applications/webapp",
+            "tls": {
+                "certificate": "bundlesimpnotifs"
+            }
         }
     },
 

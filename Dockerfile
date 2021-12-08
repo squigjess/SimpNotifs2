@@ -28,13 +28,13 @@ RUN apt update && apt install -y python3-pip                                  \
 
 # export UNIT=$(docker run -d -p 8080:8000 unit-webapp)
 
-# export UNIT=$(                                                         \
-#       docker run -d                                                      \
+# export UNIT=$(                                                                 \
+#       docker run -d                                                            \
 #       --mount type=bind,src="$(pwd)/nginx/config/",dst=/docker-entrypoint.d/   \
 #       --mount type=bind,src="$(pwd)/nginx/log/unit.log",dst=/var/log/unit.log  \
 #       --mount type=bind,src="$(pwd)/nginx/state",dst=/var/lib/unit             \
-#       --mount type=bind,src="$(pwd)/webapp",dst=/www                     \
-#       -p 8080:8000 unit-webapp                                           \
+#       --mount type=bind,src="$(pwd)/webapp",dst=/www                           \
+#       -p 8080:8000 unit-webapp                                                 \
 #   )
 
 # https://unit.nginx.org/howto/certbot/
