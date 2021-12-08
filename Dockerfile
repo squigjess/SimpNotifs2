@@ -36,3 +36,5 @@ RUN apt update && apt install -y python3-pip                                  \
 #       --mount type=bind,src="$(pwd)/webapp",dst=/www                     \
 #       -p 8080:8000 unit-webapp                                           \
 #   )
+
+# https://unit.nginx.org/howto/certbot/
